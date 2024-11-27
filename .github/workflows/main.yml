@@ -1,0 +1,42 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches: [ 'new_features_467605' ]
+
+jobs:
+  run_unit_tests_on_ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11.9'
+  
+    - name: Run unit tests
+      run: |
+        python -m unittest rectangle.py
+        python -m unittest triangle.py
+        python -m unittest circle.py
+        python -m unittest square.py
+
+  run_unit_tests_in_windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11.9'
+
+    - name: Run unit tests
+      run: |
+        python -m unittest rectangle.py
+        python -m unittest triangle.py
+        python -m unittest circle.py
+        python -m unittest square.py
