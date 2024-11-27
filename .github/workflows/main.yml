@@ -23,7 +23,7 @@ jobs:
         python -m unittest circle.py
         python -m unittest square.py
 
-  run_unit_tests_in_windows:
+  run_unit_tests_on_windows:
     runs-on: windows-latest
 
     steps:
